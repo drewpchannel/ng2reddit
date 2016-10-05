@@ -1,17 +1,10 @@
-(function(app) {
-  var Component = ng.core.Component;
-  var Inject = ng.core.Inject;
-  var RedditSampleService = app.RedditSampleService;
+import { Component } from '@angular/core';
 
-  @Component({
-    selector: 'exampleTest',
-    template: '<p>k</p>'
-  })
-  class ComponentExample {
-    constructor() {
-    }
+@Component({
+  selector: 'exampleTest',
+  template: '<p>k</p>'
+})
+export class ComponentExample {
+  constructor() {
   }
-
-  app.ComponentExample = ComponentExample;
-
-})(window.app || (window.app = {}));
+}

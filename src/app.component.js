@@ -1,16 +1,11 @@
-(function(app) {
-  var Component = ng.core.Component;
+import { Component } from '@angular/core';
 
-  @Component({
-    selector: 'my-app',
-    template: `
-      <h1>Random Quote</h1>
-      <exampleTest></exampleTest>
-      <buttonTest></buttonTest>
-    `
-  })
-  class AppComponent { }
-
-  app.AppComponent = AppComponent;
-
-})(window.app || (window.app = {}));
+@Component({
+  selector: 'my-app',
+  template: `
+    <h1>Random Quote</h1>
+    <exampleTest></exampleTest>
+    <buttonTest></buttonTest>
+  `
+})
+export class AppComponent { }
