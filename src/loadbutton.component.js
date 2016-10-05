@@ -4,11 +4,14 @@
   @Component ({
       selector: 'buttonTest',
       template: `
-      <button>Test Button</button>
+      <button (click)='clicked($event)'>Test Button</button>
       `
   })
   class LoadButton {
     constructor () {
+    }
+    clicked(event) {
+      console.log(event)
     }
   }
 
