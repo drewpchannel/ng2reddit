@@ -26,7 +26,8 @@ System.register(['@angular/core', '@angular/http'], function(exports_1, context_
                     this.http = http;
                 }
                 AppComponent.prototype.yup = function () {
-                    console.log(this.http.get('https://www.reddit.com/r/webdev.json'));
+                    return this.http.get('https://www.reddit.com/r/webdev.json').toPromise()
+                        .then(function (response) { return console.log(response.json()); });
                 };
                 AppComponent = __decorate([
                     core_1.Component({

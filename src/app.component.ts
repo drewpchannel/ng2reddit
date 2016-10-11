@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(private http: Http) {
   }
   yup () {
-    console.log(this.http.get('https://www.reddit.com/r/webdev.json'))
+    return this.http.get('https://www.reddit.com/r/webdev.json').toPromise()
+      .then(response => console.log(response.json()));
   }
-
 }
