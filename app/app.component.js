@@ -25,14 +25,16 @@ System.register(['@angular/core', '@angular/http'], function(exports_1, context_
                 function AppComponent(http) {
                     this.http = http;
                 }
-                AppComponent.prototype.yup = function () {
-                    return this.http.get('https://www.reddit.com/r/webdev.json').toPromise()
-                        .then(function (response) { return console.log(response.json()); });
+                AppComponent.prototype.yup = function (event) {
+                    event.preventDefault();
+                    console.log(event.srcElement, .0.value);
+                    // return this.http.get('https://www.reddit.com/r/webdev.json').toPromise()
+                    //   .then(response => console.log(response.json()));
                 };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <h1>Quote Of The Day</h1>\n    <button (click)=\"yup()\">Test</button>\n  "
+                        template: "\n    <h1>Quote Of The Day</h1>\n    <form (submit)=\"yup($event)\">\n        <input ngControl=\"subReddit\" type=\"text\" placeholder=\"Sub Reddit\">\n        <input ngControl=\"Height\" type=\"text\" placeholder=\"Height\">\n        <input ngControl=\"Width\" type=\"text\" placeholder=\"Width\">\n      <button type=\"submit\">Load Reddit</button>\n    </form>\n  "
                     }), 
                     __metadata('design:paramtypes', [http_1.Http])
                 ], AppComponent);
